@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebApplication1.Models.Events>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <style>
+        .table {
+            border: 10px;
+            border-color: rgba(255,255,255, 0);
+            border-style: solid;
+            height: 180px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width:95%;
+            margin-right: 100px;
+            margin-left: 50px;
+            margin-top:100px;
+            border-spacing: 10px;
+        }
+
+        .tr {
+            background: rgba(255,255,255, 0.9);
+            text-align: justify;
+            border-color: rgba(255,255,255, 1);
+            border-bottom: 10px;
+            word-break: break-all;
+        }
+
+        .stolbez {
+            text-align: right;
+            width: 170px;
+        }
+        .perenos {
+            white-space: pre-line;
+        }
+        .date {
+            text-align: right;
+        }
+
+        .button {
+            background-color: rgba(62, 84, 123, 1);
+            border-radius: 8px;
+            font-size: 15px;
+            position: absolute;
+            top: 100px;
+            right: 50px;
+            text-decoration: none;
+            display: inline-block; /* Строчно-блочный элемент */
+            color: #fff; /* Белый цвет текста */
+            padding: 1rem 1.5rem; /* Поля вокруг текста */
+            text-decoration: none; /* Убираем подчёркивание */
+            border-radius: 3px;
+        }
+
+        .signu {
+            background-color: rgba(62, 84, 123, 1);
+            border-radius: 8px;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-block; /* Строчно-блочный элемент */
+            color: #fff; /* Белый цвет текста */
+            padding: 2px 2px; /* Поля вокруг текста */
+            text-decoration: none; /* Убираем подчёркивание */
+            border-radius: 3px;
+        }
+    </style>
+
+    @if (User.Identity.Name != null)
+    {
+        @if (User.Identity.Name.ToString() == "anna.mav31@mail.ru")
+        {
+            <p>
+                <a class="button" asp-action="Create">Создать</a>
+            </p>
+        }
+    }
+
+    <table class="table">
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr class="tr">
+                <td width="150">
+                    @if (item.ImageEvent != null)
+                    {
+                        @*<td width="150">*@
+                        <img src="~/img/@item.ImageEvent" class="rounded-circle" width="200" height="200" asp-append-version="true">
+                        @*</td>*@
+                    }
+                </td>
+                <td>
+                    <h1>
+                        <b>
+                            @Html.DisplayFor(modelItem => item.NameEvent)
+                        </b>
+                    </h1>
+                    @Html.DisplayFor(modelItem => item.DescriptionEvent)
+                    <div class="date">
+                        @Html.DisplayFor(modelItem => item.DateEvent)
+                    </div>
+                </td>
+
+                @if (User.Identity.Name != null)
+                {
+                    @if (User.Identity.Name.ToString() != "anna.mav31@mail.ru")
+                    {
+                        <td width="100" class="perenos">
+                            <form asp-action="But">
+                                <a class="signu" asp-action="But" asp-route-id="@item.Id">Записаться</a>
+                            </form>
+                        </td>
+                    }
+                }
+
+                @if (User.Identity.Name != null)
+                {
+                    @if (User.Identity.Name.ToString() == "anna.mav31@mail.ru")
+                    {
+                        <td width="200" class="perenos">
+                            @Html.DisplayFor(model => item.SignUpEvent)
+                        </td>
+                        <td class="stolbez">
+                            <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a>
+                            <br />
+                            <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                        </td>
+                    }
+                }
+            </tr>
+                    
+             }
+                </tbody>
+    </table>
+

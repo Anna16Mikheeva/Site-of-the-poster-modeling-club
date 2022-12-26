@@ -1,0 +1,45 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<style>
+    .center {
+        border-width: 3px;
+        border-style: solid;
+        text-align: center;
+        margin-top: 50px;
+        margin-left: 300px;
+        margin-right: 300px;
+        padding-left:50px;
+        padding-top:20px;
+        background: rgba(255,255,255, 0.9);
+        height: 500px;
+    }
+    .padd {
+        padding-left: 50px;
+    }
+</style>
+
+<div class="center">
+    <h3>Настройки</h3>
+    <hr />
+    <div class="row padd">
+        <div class="col-md-3">
+            <partial name="_ManageNav" />
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

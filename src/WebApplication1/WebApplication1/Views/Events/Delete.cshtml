@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.Events
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    .center {
+        border-width: 3px;
+        border-style: solid;
+        text-align: center;
+        margin-top: 250px;
+        margin-right: 400px;
+        margin-left: 400px;
+        padding-bottom: 10px;
+        background: rgba(255,255,255, 0.9);
+        word-break: break-all;
+    }
+</style>
+
+<div class="center">
+    <h3>Вы уверены, что хотите удалить мероприятие из списка?</h3>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Удалить" class="btn btn-danger" /> |
+    <a asp-action="Index">Отмена</a>
+</form>
+</div>

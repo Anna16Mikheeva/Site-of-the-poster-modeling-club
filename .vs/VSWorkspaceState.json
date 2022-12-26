@@ -1,4 +1,12 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\WebApplication1",
+    "\\src\\WebApplication1\\WebApplication1",
+    "\\src\\WebApplication1\\WebApplication1\\Views",
+    "\\src\\WebApplication1\\WebApplication1\\Views\\Home"
+  ],
+  "SelectedNode": "\\src\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "PreviewInSolutionExplorer": false
 }

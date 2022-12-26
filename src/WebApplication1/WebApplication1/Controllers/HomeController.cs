@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication1.Data;
 using WebApplication1.Models;
+using WebApplication1.ViewModel;
 
 namespace WebApplication1.Controllers
 {
@@ -23,25 +27,17 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        //[Authorize(Roles = "admin")]
-        public ActionResult About()
+        public IActionResult Privacy()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public IActionResult About()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
-
-        public ActionResult Show()
+        public IActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 

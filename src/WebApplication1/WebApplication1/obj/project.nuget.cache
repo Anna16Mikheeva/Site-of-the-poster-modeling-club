@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lUhzi4eEC4k9pI6vAiVl2jif4cjNE6uBjHluSiGnSdhVsrYD5+R+OUsDIiyi3K/LbAYugz53+YEY9LTrW2U8VA==",
+  "dgSpecHash": "Wn/+ALMR36RmTF5A2X2ZskxlyPY4sAdX5eChRW/MfyiHYFDQMbsUADK78UbAGoAhPBlyW6hBgpOZtc5ukwp/IQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Иван\\Source\\Repos\\Site-of-the-poster-modeling-club\\src\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\Иван\\source\\repos\\Site-of-the-poster-modeling-club\\src\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Иван\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Иван\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",

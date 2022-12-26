@@ -1,0 +1,39 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<style>
+    .div {
+        border-width: 3px;
+        border-style: solid;
+        text-align: center;
+        height: 100px;
+        margin-right: 400px;
+        margin-left: 400px;
+        padding-left: 50px;
+        padding-right: 50px;
+        background: rgba(255,255,255, 0.9);
+        word-break: break-all;
+    }
+
+    .button {
+        background-color: rgba(62, 84, 123, 1);
+        border-radius: 8px;
+        font-size: 15px;
+        text-decoration: none;
+        display: inline-block; /* Строчно-блочный элемент */
+        color: #fff; /* Белый цвет текста */
+        padding: 1rem 1.5rem; /* Поля вокруг текста */
+        text-decoration: none; /* Убираем подчёркивание */
+        border-radius: 3px;
+    }
+</style>
+
+@*https://localhost:44390/Identity/Account/RegisterConfirmation?email=dfgg@gmail.com&returnUrl=%2F*@
+
+<div class="div">
+        Регистрация прошла успешно 
+    <br><div class="form-group"><a id="confirm-link" class="button" href="@Model.EmailConfirmationUrl">Ok</a></div>
+</div>
